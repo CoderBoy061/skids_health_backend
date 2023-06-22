@@ -13,10 +13,9 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.use(express.json({ limit: "30mb", extended: true }));
-const userRoutes = require('./routes/userRoutes');
 const addDataRoutes = require('./routes/userData');
 
 
-app.use('/api/user', userRoutes)
+
 app.use("/api/userdata", addDataRoutes)
 app.listen(PORT, () => console.log(`server is listening on http://localhost:${PORT}`));
